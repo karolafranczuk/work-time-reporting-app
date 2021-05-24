@@ -1,0 +1,15 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    border-top: solid 2px rgba(white, 0.3);
+    letter-spacing: 0.3px;
+    font-size: 6px;
+    @include respond(largePhone) {
+      letter-spacing: 0;
+      width: 90%;
+    }
+  }

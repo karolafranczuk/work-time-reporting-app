@@ -1,0 +1,21 @@
+.week-table{
+    font-size: 15px;
+
+    &__table{
+        font-size: 12px;
+        border-color: black;
+        width: 80%;
+        position: relative;
+        border: 1px;
+    }
+    &__employee__info {
+        
+    }
+    &__employee__info_header{
+        text-decoration: black;
+    }
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

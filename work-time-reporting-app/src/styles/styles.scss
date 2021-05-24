@@ -1,3 +1,7 @@
 @import "./base/variables";
 @import "./base/global";
 @import "./misc/mixins";
+
+@import "./modules/_footer.scss";
+@import "./modules/header";
+@import "./modules/weekTable";

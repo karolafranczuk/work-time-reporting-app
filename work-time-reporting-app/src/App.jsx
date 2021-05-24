@@ -1,7 +1,15 @@
 import React from 'react';
 
+import Header from './components/Header';
+import WeekTable from './components/WeekTable';
+import Footer from './components/Footer';
+
 const App = () => (
-    <h1>Hello!</h1>
+    <>
+        <Header />
+        <WeekTable />
+        <Footer />
+    </>
 )
 
 export default App;
