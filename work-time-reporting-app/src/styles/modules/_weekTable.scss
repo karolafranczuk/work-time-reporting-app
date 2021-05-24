@@ -8,6 +8,14 @@
         position: relative;
         border: 1px;
     }
+    &__summary{
+        font-size: 12px;
+        border-color: black;
+        width: 80%;
+        position: relative;
+        border: 1px;
+    }
+    
     &__employee__info {
         
     }
@@ -19,3 +27,33 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+table td {
+    position: relative;
+  }
+
+table td input {
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  table td textarea {
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+  }
