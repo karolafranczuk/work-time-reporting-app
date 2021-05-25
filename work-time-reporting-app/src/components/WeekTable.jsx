@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import useProjectsData from '../hooks/useProjectsData';
-import useProjectsList from '../hooks/useProjectsData';
+import ProjectsList from './ProjectsList';
 
 const WeekTable = () => {
     const {projects, fetchProjectsList} = useProjectsData();
-    console.log(useProjectsList);
     return (
+        <>
         <div className="week-table">
             <div className="week-table__employee__info">
                 <span className="week-table_employee_info_header">P00001</span>, <span>Karolina Franczuk</span>
@@ -73,6 +73,8 @@ const WeekTable = () => {
                 </table>
             </div>
         </div>
+        <ProjectsList />
+    </>
     )
 }
 

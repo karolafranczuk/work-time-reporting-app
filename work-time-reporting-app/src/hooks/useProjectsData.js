@@ -5,12 +5,12 @@ const useProjectsData = () => {
 
     const fetchProjectsList = async () => {
         console.log("start");
-        const res = await fetch('../../data/projects.json');
-        console.log("1")
-        const resProjects = await res.json();
+        const res = await fetch('http://localhost:3002/public/projects.json');
+        
+        const resProjects = await res;
+
         console.log(resProjects);
         setProjects(resProjects);
-        console.log(resProjects);
     }
     useEffect(() => {
         fetchProjectsList()
