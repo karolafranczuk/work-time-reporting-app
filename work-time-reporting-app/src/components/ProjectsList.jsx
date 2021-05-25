@@ -3,10 +3,11 @@ import projects from '../data/projects.json';
 console.log(projects);
 const ProjectsList = () => {
     return (
-        <div>
-            <ul>
-            {projects.map((projectsData, index) => { return  
-            })}
+        <div className="projects-list">
+            <ul className="projects-list__ul">
+                {projects.map((project, index) => {
+                    return(<li key={project.id}>{project.id}</li>)
+                })}
             </ul>
         </div>
 
