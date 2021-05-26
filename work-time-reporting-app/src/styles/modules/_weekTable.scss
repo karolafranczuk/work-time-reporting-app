@@ -57,3 +57,7 @@ table td input {
     padding: 10px;
     box-sizing: border-box;
   }
+table th {
+    background-color: $colour-3;
+    color: $text-1;
+}
