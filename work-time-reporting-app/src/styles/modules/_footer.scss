@@ -8,6 +8,7 @@
     border-top: solid 2px rgba(white, 0.3);
     letter-spacing: 0.3px;
     font-size: 6px;
+    clear: both;
     @include respond(largePhone) {
       letter-spacing: 0;
       width: 90%;

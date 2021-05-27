@@ -1,0 +1,19 @@
+.employee-info {
+    float: left;
+    width: 10%;
+    height: max-content;
+
+    background-color: $colour-1;
+    height: 80%;
+    border-right: $colour-3 solid 0.1rem;
+    &__header-div {
+        font-size: 1rem;
+        color: $text-1;
+        background-color: $colour-1;
+        padding: 1rem;
+        text-align: center;  
+    }
+    &__header {
+       font-weight: bolder; 
+    }
+}

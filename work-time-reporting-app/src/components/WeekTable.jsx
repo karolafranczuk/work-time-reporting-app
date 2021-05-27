@@ -10,12 +10,14 @@ import SummaryWeekTable from './SummaryWeekTable';
 const WeekTable = () => {
     const {projects, fetchProjectsList} = useProjectsData();
     return (
-        <>
+        <div className="week-table">
             <EmployeeInfo />
-            <SelectedWeekTable />  
-            <SummaryWeekTable />       
-            <ProjectsList />
-        </>
+            <div className="content">
+                <SelectedWeekTable />  
+                <SummaryWeekTable />       
+                <ProjectsList />
+            </div>
+        </div>
     )
 }
 

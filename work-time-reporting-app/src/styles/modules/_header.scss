@@ -1,11 +1,25 @@
 .header {
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
     border: transparent;
     background-color: $colour-2;
-    padding: 2rem 3rem;
+    padding: 1.5rem 4rem 1rem;
+    border-bottom: 2px solid black;
+
+    &__child1 {
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    &__child2 {
+      flex-direction: column;
+      flex-grow: 1;
+    }
   
     &__title {
       font-weight: 600;
       color: white;
     }
   }
+
