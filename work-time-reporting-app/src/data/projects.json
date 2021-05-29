@@ -12,11 +12,11 @@
     {
         "id": "Service0001/2021",
         "name": "Paid Holiday",
-        "client": ""
+        "client": "Internal"
     },
     {
         "id": "Service0002/2021",
         "name": "Education",
-        "client": ""
+        "client": "Internal"
     }
 ]

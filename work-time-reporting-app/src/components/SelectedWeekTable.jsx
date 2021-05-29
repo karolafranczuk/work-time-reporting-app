@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProjectsList from './ProjectsList';
 
-const SelectedWeekTable = () => (
+const SelectedWeekTable = () => {
+  
+    const [ listVisible, setListVisible ] = useState(false);
+
+    return (
     <div className="week-table">
             <table className="week-table__table">
                 <thead>
@@ -17,7 +22,7 @@ const SelectedWeekTable = () => (
                 </thead>
                 <tbody>
                 <tr>
-                    <td><button className="week-table__button">Select project</button></td>
+                    <td><button className="week-table__button" onClick={() => setListVisible(true)}>Select project</button></td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
@@ -43,7 +48,10 @@ const SelectedWeekTable = () => (
                 </tbody>
             </table>
             <button className="week_table__add__button">Add project</button>
+            {listVisible && <ProjectsList/>}
     </div>
-)
+    
+    )
+}
 
 export default SelectedWeekTable;

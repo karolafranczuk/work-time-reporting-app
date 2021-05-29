@@ -1,4 +1,65 @@
 .projects-list{
-    background-color: $colour-2;
+    background-color: $colour-3;
+    border-radius: 1rem;
+    border: solid 1px $colour-2;
+    list-style-type: none;
+    z-index: 1001;
+    position: relative;
+    width: 40%;
+    display: inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    margin: 0px auto;
 
+    &__ul{
+        list-style-type: none;
+        cursor: pointer;
+
+        &__li{
+            padding: 0.3em;
+        }
+        
+
+        &__li:hover{
+            color: $colour-1;
+        }
+        &__li:selected{
+            color: green;
+        }
+    }
+    &__button{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button_x {
+        padding: 1%;
+        border: none;
+        background: none;
+        flex-direction: column;
+        font-weight: bold;
+        color: $colour-2;
+        cursor: pointer;
+    }
+    &__button_x:hover{
+        color: brown;
+    }
+    &__button_ok {
+        padding: 1%;
+        border: none;
+        background: none;
+        flex-direction: column;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $colour-2;
+        cursor: pointer;
+    }
+    &__button_ok:hover{
+        color: green
+    }
+
+}
+
+.projects-list__hide {
+    display: none;
+    z-index: -1000;
 }
