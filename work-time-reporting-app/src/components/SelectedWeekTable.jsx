@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SelectedWeekTable = () => (
-    <div className="week-table__table">
+    <div className="week-table">
             <table className="week-table__table">
                 <thead>
                 <tr>
@@ -17,7 +17,7 @@ const SelectedWeekTable = () => (
                 </thead>
                 <tbody>
                 <tr>
-                    <td><button>Select project</button></td>
+                    <td><button className="week-table__button">Select project</button></td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
@@ -27,16 +27,22 @@ const SelectedWeekTable = () => (
                     <td><input type="number" min="0" max="24"></input></td>
                 </tr>
                 <tr>
-                    <td>Name/Description</td>
+                    <td className="week-table__table__header">Project ID</td>
+                    <td colSpan="3"><textarea/></td>
+                    <td className="week-table__table__header">Client</td>
+                    <td colSpan="3"><textarea/></td>
+                </tr>
+                <tr>
+                    <td className="week-table__table__header">Name/Description</td>
                     <td colSpan="7"><textarea/></td>
                 </tr>
                 <tr>
-                    <td>Comment</td>
+                    <td className="week-table__table__header">Comment</td>
                     <td colSpan="7"><textarea/></td>
                 </tr>
                 </tbody>
             </table>
-            <button>Add project</button>
+            <button className="week_table__add__button">Add project</button>
     </div>
 )
 

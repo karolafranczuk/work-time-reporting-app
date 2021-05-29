@@ -1,27 +1,58 @@
 .week-table{
     font-size: 15px;
+    display: flex;
     
 
     &__table{
         font-size: 12px;
         border-color: black;
         width: 80%;
-        position: relative;
+        margin-left: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        flex-direction: column;
+        margin-right: 3rem;
+        
+        
         border: 1px;
+        flex-direction: column;
     }
     &__summary{
         font-size: 12px;
         border-color: black;
         width: 80%;
-        position: relative;
         border: 1px;
+        margin-left: 2rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
-    
-    &__employee__info {
-        
-    }
+
     &__employee__info_header{
         text-decoration: black;
+    }
+    &__button {
+      display: inline-block;
+      padding: 0.3em 1em;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.2em;
+      font-weight: 400;
+      color: $text-1;
+      background-color: $colour-3;
+      text-align: center;
+      position: relative;
+      box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);  
+    }
+    &__button:active{
+        box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    }
+    &__table__header {
+        font-weight: bolder;
+        text-transform: uppercase;
+        background-color: $colour-4;
+    }
+    &__add__button{
+        flex-direction: column;
+        margin-top: 3rem;
     }
 }
 table, th, td {
@@ -29,8 +60,16 @@ table, th, td {
     border-collapse: collapse;
 }
 
+table th {
+    padding: 0.5%;
+    background-color: $colour-3;
+    color: $text-1;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12); 
+}
+
 table td {
     position: relative;
+    padding: 1%;
   }
 
 table td input {
@@ -58,7 +97,6 @@ table td input {
     padding: 10px;
     box-sizing: border-box;
   }
-table th {
-    background-color: $colour-3;
-    color: $text-1;
+table {
+    border-radius: 0.2em;
 }

@@ -15,7 +15,6 @@ const WeekTable = () => {
             <div className="content">
                 <SelectedWeekTable />  
                 <SummaryWeekTable />       
-                <ProjectsList />
             </div>
         </div>
     )
