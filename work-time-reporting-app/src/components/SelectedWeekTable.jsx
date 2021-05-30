@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import ProjectsList from './ProjectsList';
+import projects from '../data/projects.json';
 
 const SelectedWeekTable = () => {
-  
-    const [ listVisible, setListVisible ] = useState(false);
+ 
+const [project, setProject] = useState('');
+
 
     return (
     <div className="week-table">
@@ -22,7 +24,15 @@ const SelectedWeekTable = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td><button className="week-table__button" onClick={() => setListVisible(true)}>Select project</button></td>
+                    <td>
+                        <select name="projects" value={project} onChange={(e) => setProject(e.target.value)}>
+                        {projects.map((project, index) => (<option value={project.id} key={project.id}>{project.id}</option>))}
+                        </select>
+                        <button 
+                            className="week-table__button">
+                            Select project
+                        </button>
+                    </td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
                     <td><input type="number" min="0" max="24"></input></td>
@@ -48,9 +58,7 @@ const SelectedWeekTable = () => {
                 </tbody>
             </table>
             <button className="week_table__add__button">Add project</button>
-            {listVisible && <ProjectsList/>}
-    </div>
-    
+    </div>  
     )
 }
 
