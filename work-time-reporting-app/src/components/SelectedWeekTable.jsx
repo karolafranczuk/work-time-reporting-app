@@ -3,8 +3,17 @@ import ProjectsList from './ProjectsList';
 import projects from '../data/projects.json';
 
 const SelectedWeekTable = () => {
- 
 const [project, setProject] = useState('');
+const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""})
+
+const handleSelectProject = (selectedProject) => {
+ 
+    for (let i = 0; i < projects.length; i++){
+        if (projects[i].id === selectedProject) {
+            setProjectObj(projects[i]);   
+            } 
+        }
+    }
 
 
     return (
@@ -25,11 +34,11 @@ const [project, setProject] = useState('');
                 <tbody>
                 <tr>
                     <td>
-                        <select name="projects" value={project} onChange={(e) => setProject(e.target.value)}>
+                        <select className="week-table__select" name="projects" value={project} onChange={(e) => setProject(e.target.value)}>
                         {projects.map((project, index) => (<option value={project.id} key={project.id}>{project.id}</option>))}
                         </select>
                         <button 
-                            className="week-table__button">
+                            className="week-table__button" onClick={() => handleSelectProject(project)}>
                             Select project
                         </button>
                     </td>
@@ -43,13 +52,13 @@ const [project, setProject] = useState('');
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Project ID</td>
-                    <td colSpan="3"><textarea/></td>
+                    <td colSpan="3">{projectObj.id}</td>
                     <td className="week-table__table__header">Client</td>
-                    <td colSpan="3"><textarea/></td>
+                    <td colSpan="3">{projectObj.client}</td>
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Name/Description</td>
-                    <td colSpan="7"><textarea/></td>
+                    <td colSpan="7">{projectObj.name}</td>
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Comment</td>
