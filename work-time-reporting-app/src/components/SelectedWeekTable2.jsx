@@ -2,26 +2,8 @@ import React, { useState } from 'react';
 import ProjectsList from './ProjectsList';
 import projects from '../data/projects.json';
 
-const SelectedWeekTable = () => {
-const [project, setProject] = useState('');
-const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""})
-const [isProjectSelected, setIsProjectSelected] = useState(false);
-
-const handleSelectProject = (selectedProject) => {
- 
-    for (let i = 0; i < projects.length; i++){
-        if (projects[i].id === selectedProject) {
-            setProjectObj(projects[i]);  
-            setIsProjectSelected(true); 
-            } 
-        }
-    }
-const handleDeleteProject = () => {
-    setProjectObj({"id": "", "name": "", "client": ""});
-    setIsProjectSelected(false);
-}
-
-
+const SelectedWeekTable2 = (props) => {
+    const {isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject} = props;
 
     return (
     <div className="week-table">
@@ -80,9 +62,9 @@ const handleDeleteProject = () => {
                 </tr>
                 </tbody>
             </table>
-            <button className="week_table__add__button">Add project</button>
+            <button className="week_table__add__button" onClick={() => handleAddProject()}>Add project</button>
     </div>  
     )
 }
 
-export default SelectedWeekTable;
+export default SelectedWeekTable2;
