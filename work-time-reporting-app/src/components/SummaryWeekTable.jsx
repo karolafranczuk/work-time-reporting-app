@@ -8,7 +8,8 @@ const SummaryWeekTable = (props) => {
     <table>
     <thead>
     <tr>
-        <th>Project ID</th>
+        <th>Project Information</th>
+        <th>Comment</th>
         <th>Mon (data)</th>
         <th>Tue (data)</th>
         <th>Wed (data)</th>
@@ -18,15 +19,17 @@ const SummaryWeekTable = (props) => {
         <th>Sun (data)</th>
         <th>Summary</th>
     </tr>
-    {addedProjects.map(((addedProject, index) => <tr key={addedProject.id}>
-        <td>{addedProject.id}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    {addedProjects.length > 0 && addedProjects.map(((addedProject, index) => <tr key={addedProject.id}>
+        <td>{`${addedProject.name} (${addedProject.id})`}<br></br>
+            {`${addedProject.client}`}</td>
+        <td>{addedProject.comment}</td>
+        <td>{addedProject.hours.mon}</td>
+        <td>{addedProject.hours.tue}</td>
+        <td>{addedProject.hours.wed}</td>
+        <td>{addedProject.hours.thu}</td>
+        <td>{addedProject.hours.fri}</td>
+        <td>{addedProject.hours.sat}</td>
+        <td>{addedProject.hours.sun}</td>
         <td></td>
     </tr>))} 
     </thead>

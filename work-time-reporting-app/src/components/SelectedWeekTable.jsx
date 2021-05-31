@@ -2,27 +2,8 @@ import React, { useState } from 'react';
 import ProjectsList from './ProjectsList';
 import projects from '../data/projects.json';
 
-const SelectedWeekTable = () => {
-const [project, setProject] = useState('');
-const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""})
-const [isProjectSelected, setIsProjectSelected] = useState(false);
-
-const handleSelectProject = (selectedProject) => {
- 
-    for (let i = 0; i < projects.length; i++){
-        if (projects[i].id === selectedProject) {
-            setProjectObj(projects[i]);  
-            setIsProjectSelected(true); 
-            } 
-        }
-    }
-const handleDeleteProject = () => {
-    setProjectObj({"id": "", "name": "", "client": ""});
-    setIsProjectSelected(false);
-}
-
-
-
+const SelectedWeekTable = (props) => {
+const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject} = props;
     return (
     <div className="week-table">
             <table className="week-table__table">
@@ -47,12 +28,14 @@ const handleDeleteProject = () => {
                         </select>
                         <button 
                             disabled={isProjectSelected}
-                            className="week-table__button" onClick={() => handleSelectProject(project)}>
+                            className="week-table__button" 
+                            onClick={handleSelectProject}>
                             Select project
                         </button>
                         <button 
                             disabled={!isProjectSelected}
-                            className="week-table__button" onClick={() => handleDeleteProject()}>
+                            className="week-table__button" 
+                            onClick={handleDeleteProject}>
                             Delete project
                         </button>
                     </td>
@@ -80,7 +63,10 @@ const handleDeleteProject = () => {
                 </tr>
                 </tbody>
             </table>
-            <button className="week_table__add__button">Add project</button>
+            <button className="week_table__add__button"
+            onClick={handleAddProject}>
+                Add project
+            </button>
     </div>  
     )
 }
