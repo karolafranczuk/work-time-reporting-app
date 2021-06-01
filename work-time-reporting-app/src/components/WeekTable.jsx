@@ -45,6 +45,7 @@ const countHoursInProject = (addedProject) => {
     for (let [key, value] of Object.entries(weekHours)) {
         if (typeof(value) === "string") {
             value = Number(value)
+            summary = summary + value;
         } 
     }   
     return summary;
