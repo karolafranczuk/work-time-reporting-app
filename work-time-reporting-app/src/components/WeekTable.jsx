@@ -10,9 +10,19 @@ import projects from '../data/projects.json';
 const WeekTable = () => {
 
 const [project, setProject] = useState('');
-const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""})
+const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""});
 const [isProjectSelected, setIsProjectSelected] = useState(false);
-const [addedProjects, setAddedProjects] = useState([])
+const [addedProjects, setAddedProjects] = useState([]);
+const [hours, setHours] = useState({
+    "mon": "",
+    "tue": "",
+    "wed": "",
+    "thu": "",
+    "fri": "",
+    "sat": "",
+    "sun": ""
+    });
+const [comment, setComment] = useState("");
 
 const handleSelectProject = (selectedProject) => {
     for (let i = 0; i < projects.length; i++){
@@ -29,7 +39,6 @@ const handleDeleteProject = () => {
 }
 
 const handleAddProject = (projectObj) => {
-    console.log("handleAdd")
     const addedProject = {"id": "",
                         "name": "",
                         "client": "",
@@ -47,11 +56,22 @@ const handleAddProject = (projectObj) => {
         addedProject.id = projectObj.id;
         addedProject.name = projectObj.name;
         addedProject.client = projectObj.client;
-        addedProject.comment = "vlvlvlv";
-        addedProject.hours.mon = 8;
+        addedProject.comment = comment;
+        addedProject.hours = hours;
 
-    setAddedProjects([addedProject, ...addedProjects]);
-    console.log(addedProjects);
+    setAddedProjects([ ...addedProjects, addedProject]);
+    setIsProjectSelected(false);
+    setProjectObj({"id": "", "name": "", "client": ""});
+    setComment("eja");
+    setHours({
+        "mon": "",
+        "tue": "",
+        "wed": "",
+        "thu": "",
+        "fri": "",
+        "sat": "",
+        "sun": ""
+        });
 }
 
 
@@ -67,6 +87,10 @@ const handleAddProject = (projectObj) => {
                     handleSelectProject={() => handleSelectProject(project)}
                     handleDeleteProject={() => handleDeleteProject()}
                     handleAddProject={() => handleAddProject(projectObj)}
+                    hours={hours}
+                    setHours={setHours}
+                    comment={comment}
+                    setComment={setComment}
                 /> 
                 <SummaryWeekTable
                     addedProjects={addedProjects}

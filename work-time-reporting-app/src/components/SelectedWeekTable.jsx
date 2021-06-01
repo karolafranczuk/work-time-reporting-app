@@ -3,7 +3,7 @@ import ProjectsList from './ProjectsList';
 import projects from '../data/projects.json';
 
 const SelectedWeekTable = (props) => {
-const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject} = props;
+const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject, hours, setHours, comment, setComment} = props;
     return (
     <div className="week-table">
             <table className="week-table__table">
@@ -39,13 +39,69 @@ const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, 
                             Delete project
                         </button>
                     </td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
-                    <td><input type="number" min="0" max="24"></input></td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24" 
+                            value={hours.mon} 
+                            onChange={(e) =>setHours({...hours, mon: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0"
+                            max="24"
+                            value={hours.tue}
+                            onChange={(e) => setHours({...hours, tue: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24"
+                            value={hours.wed}
+                            onChange={(e) => setHours({...hours, wed: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24"
+                            value={hours.thu}
+                            onChange={(e) => setHours({...hours, thu: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24"
+                            value={hours.fri}
+                            onChange={(e) => setHours({...hours, fri: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24"
+                            value={hours.sat}
+                            onChange={(e) => setHours({...hours, sat: e.target.value})}>
+                        </input>
+                    </td>
+                    <td>
+                        <input 
+                            type="number" 
+                            min="0" 
+                            max="24"
+                            value={hours.sun}
+                            onChange={(e) => setHours({...hours, sun: e.target.value})}>
+                        </input>
+                    </td>
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Project ID</td>
@@ -59,7 +115,7 @@ const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, 
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Comment</td>
-                    <td colSpan="7"><textarea/></td>
+                    <td colSpan="7" value={comment} onChange={(e) => setComment(e.target.value)}><textarea/></td>
                 </tr>
                 </tbody>
             </table>
