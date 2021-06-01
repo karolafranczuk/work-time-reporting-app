@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import ProjectsList from './ProjectsList';
+import React from 'react';
+
 import projects from '../data/projects.json';
+import { v4 as uuidv4 } from 'uuid';
 
 const SelectedWeekTable = (props) => {
 const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject, hours, setHours, comment, setComment} = props;
@@ -24,7 +25,7 @@ const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, 
                     <td>
                         <select 
                         disabled={isProjectSelected} className="week-table__select" name="projects" value={project} onChange={(e) => setProject(e.target.value)}>
-                        {projects.map((project, index) => (<option value={project.id} key={project.id}>{project.id}</option>))}
+                        {projects.map((project, index) => (<option value={project.id} key={uuidv4()}>{project.id}</option>))}
                         </select>
                         <button 
                             disabled={isProjectSelected}
@@ -115,12 +116,17 @@ const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, 
                 </tr>
                 <tr>
                     <td className="week-table__table__header">Comment</td>
-                    <td colSpan="7" value={comment} onChange={(e) => setComment(e.target.value)}><textarea/></td>
+                    <td colSpan="7" >
+                        <textarea 
+                            value={comment} 
+                            onChange={(e) => setComment(e.target.value)}/>
+                    </td>
                 </tr>
                 </tbody>
             </table>
-            <button className="week_table__add__button"
-            onClick={handleAddProject}>
+            <button 
+                className="week_table__add__button"
+                onClick={handleAddProject}>
                 Add project
             </button>
     </div>  

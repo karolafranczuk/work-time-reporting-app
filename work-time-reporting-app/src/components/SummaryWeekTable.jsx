@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const SummaryWeekTable = (props) => {
    const {addedProjects} = props;
+
    return (
    <div className="week-table__summary">
     <table>
@@ -19,7 +20,7 @@ const SummaryWeekTable = (props) => {
         <th>Sun (data)</th>
         <th>Summary</th>
     </tr>
-    {addedProjects.length > 0 && addedProjects.map(((addedProject, index) => <tr key={addedProject.id}>
+    {addedProjects.length > 0 && addedProjects.map(((addedProject, index) => <tr key={uuidv4()}>
         <td>{`${addedProject.name} (${addedProject.id})`}<br></br>
             {`${addedProject.client}`}</td>
         <td>{addedProject.comment}</td>

@@ -38,6 +38,18 @@ const handleDeleteProject = () => {
     setIsProjectSelected(false);
 }
 
+const countHoursInProject = (addedProject) => {
+    const weekHours = addedProject.hours;
+    let summary = 0;
+    
+    for (let [key, value] of Object.entries(weekHours)) {
+        if (typeof(value) === "string") {
+            value = Number(value)
+        } 
+    }   
+    return summary;
+}
+
 const handleAddProject = (projectObj) => {
     const addedProject = {"id": "",
                         "name": "",
@@ -51,7 +63,8 @@ const handleAddProject = (projectObj) => {
                             "fri": 0,
                             "sat": 0,
                             "sun": 0
-                            }
+                            },
+                        "summary": 0
                         }
         addedProject.id = projectObj.id;
         addedProject.name = projectObj.name;
@@ -59,10 +72,13 @@ const handleAddProject = (projectObj) => {
         addedProject.comment = comment;
         addedProject.hours = hours;
 
+        addedProject.summary = countHoursInProject(addedProject);
+
+        console.log(addedProject);
     setAddedProjects([ ...addedProjects, addedProject]);
     setIsProjectSelected(false);
     setProjectObj({"id": "", "name": "", "client": ""});
-    setComment("eja");
+    setComment("");
     setHours({
         "mon": "",
         "tue": "",
