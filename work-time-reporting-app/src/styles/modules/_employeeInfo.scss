@@ -1,19 +1,56 @@
 .employee-info {
-    float: left;
-    width: 10%;
-    height: max-content;
-
+    width: 95%;
+    border: 0.5px solid black;
+    border-radius: 4px;
+    position: relative;
+    margin-top: 15px;
     background-color: $colour-1;
     height: 80%;
-    border-right: $colour-3 solid 0.1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
+    clear: both;
     &__header-div {
-        font-size: 1rem;
-        color: $text-1;
-        background-color: $colour-1;
-        padding: 1rem;
-        text-align: center;  
+        display: inline-block;
+        height: min-content;
+        transform: translate(30%, -125%); 
+        background: $colour-1;
+        padding: 0 .5em; 
+        font-size: smaller;
     }
     &__header {
        font-weight: bolder; 
+    }
+    &__info {
+        border: 0.5px solid $colour-4;
+        border-radius: 4px;
+        width: 20%;
+        padding: 0.5%;
+        position: relative;
+        background: $colour-4;
+        width:30%;
+        flex-direction: column;
+        
+    }
+    &__your_raports {
+        border: 0.5px solid $colour-4;
+        border-radius: 4px;
+        float: left;
+        width: 30%;
+        flex-direction: column;
+        background: $colour-4;
+    }
+    &__selected_week {
+        border: 0.5px solid $colour-4;
+        border-radius: 4px;
+        float: left;
+        width: 30%;
+        flex-direction: column;
+        background: $colour-4;
     }
 }

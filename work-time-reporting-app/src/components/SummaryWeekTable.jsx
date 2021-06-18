@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const SummaryWeekTable = (props) => {
    const {addedProjects} = props;
 
+
    const sumProjectsHoursInWeek = (addedProjects) => {
         let summary = 0;
             for (const project of addedProjects) {
