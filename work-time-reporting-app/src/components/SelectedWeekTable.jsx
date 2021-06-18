@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const SelectedWeekTable = (props) => {
 const {projectObj, project, setProject, isProjectSelected, handleDeleteProject, handleSelectProject, handleAddProject, hours, setHours, comment, setComment} = props;
+
     return (
     <div className="week-table">
             <table className="week-table__table">

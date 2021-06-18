@@ -1,8 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const SummaryWeekTable = (props) => {
    const {addedProjects} = props;
+
+   const sumProjectsHoursInWeek = (addedProjects) => {
+        let summary = 0;
+            for (const project of addedProjects) {
+                summary = summary + Number(project.summary);
+            }
+        return summary;     
+   }
+
+   const countDifference = () => {
+       const sumHours = document.querySelector('#sumHours');
+       const expectedHours = document.querySelector('#expectedHours');
+       console.log(`${sumHours}, ${expectedHours}`);
+       
+   }
 
    return (
    <div className="week-table__summary">
@@ -31,8 +46,21 @@ const SummaryWeekTable = (props) => {
         <td>{addedProject.hours.fri}</td>
         <td>{addedProject.hours.sat}</td>
         <td>{addedProject.hours.sun}</td>
-        <td></td>
+        <td>{addedProject.summary}</td>
     </tr>))} 
+    <tr>
+        <td colSpan="9">Raported Hours</td>
+        <td id="sumHours">{sumProjectsHoursInWeek(addedProjects)}</td>
+    </tr>
+    <tr>
+        <td colSpan="9">Expected Hours</td>
+        <td id="expectedHours">40</td>
+    </tr>
+    <tr>
+        <td colSpan="4">Difference</td>
+        <td colSpan="5">Overtime/Missing hours</td>
+        <td></td>
+    </tr>
     </thead>
     </table>
 </div>
