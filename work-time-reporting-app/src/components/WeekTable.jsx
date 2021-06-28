@@ -9,7 +9,7 @@ import projects from '../data/projects.json';
 
 const WeekTable = () => {
 
-const [project, setProject] = useState('');
+const [project, setProject] = useState();
 const [projectObj, setProjectObj] = useState({"id": "", "name": "", "client": ""});
 const [isProjectSelected, setIsProjectSelected] = useState(false);
 const [addedProjects, setAddedProjects] = useState([]);
@@ -23,6 +23,7 @@ const [hours, setHours] = useState({
     "sun": ""
     });
 const [comment, setComment] = useState("");
+const [week, setWeek] = useState(toString());
 
 const handleSelectProject = (selectedProject) => {
     for (let i = 0; i < projects.length; i++){
@@ -94,7 +95,9 @@ const handleAddProject = (projectObj) => {
 
     return (
         <div className="week-table">
-            <EmployeeInfo />
+            <EmployeeInfo
+                week={week}
+                setWeek={setWeek} />
             <div className="content">
                 <SelectedWeekTable
                     project={project}

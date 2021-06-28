@@ -6,8 +6,7 @@
     margin-top: 15px;
     background-color: $colour-1;
     height: 80%;
-    display: flex;
-    flex-wrap: nowrap;
+
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +17,7 @@
     &__header-div {
         display: inline-block;
         height: min-content;
-        transform: translate(30%, -125%); 
+        transform: translate(30%, -115%); 
         background: $colour-1;
         padding: 0 .5em; 
         font-size: smaller;
@@ -26,7 +25,14 @@
     &__header {
        font-weight: bolder; 
     }
-    &__info {
+
+    &__section{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    &__section_info {
         border: 0.5px solid $colour-4;
         border-radius: 4px;
         width: 20%;
@@ -35,9 +41,8 @@
         background: $colour-4;
         width:30%;
         flex-direction: column;
-        
     }
-    &__your_raports {
+    &__section__your_raports {
         border: 0.5px solid $colour-4;
         border-radius: 4px;
         float: left;
@@ -45,7 +50,7 @@
         flex-direction: column;
         background: $colour-4;
     }
-    &__selected_week {
+    &__section__selected_week {
         border: 0.5px solid $colour-4;
         border-radius: 4px;
         float: left;
