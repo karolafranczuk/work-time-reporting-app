@@ -1,21 +1,21 @@
 [
     {
-        "title" : "Home",
+        "title" : "Fill a report",
         "url" : "#",
         "cName": "nav-links"
     },
     {
-        "title" : "Services",
+        "title" : "Sent Reports",
         "url" : "#",
         "cName" : "nav-links"
     },
     {
-        "title" : "Products",
+        "title" : "Saved Reports",
         "url" : "#",
         "cName" : "nav-links"
     },
     {
-        "title" : "Contant Us",
+        "title" : "Information",
         "url" : "#",
         "cName" : "nav-links"
     },

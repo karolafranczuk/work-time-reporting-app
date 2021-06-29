@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MenuItems from "../data/menuitems.json";
-import { Button } from './Button';
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/modules/_navbar.scss';
 
 class Navbar extends React.Component {
@@ -14,16 +14,15 @@ class Navbar extends React.Component {
     render() {
         return(
             <nav className="NavbarItems">
-                <h1 className="navbar-logo">React<i className="fab fa-react"></i></h1>
+                <h1 className="navbar-logo">Work Time Reporting Application <i className="fas fa-calendar-week"></i></h1>
                 <div className="menu-icon" onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}/>
 
                 </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <ul className={this.state.clicked ? 'nav-menu-active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
                         return(
-                            //zmień ten klucz na uuid
-                            <li key={index}>
+                            <li key={uuidv4()}>
                                 <a className={item.cName} href={item.url}>
                                     {item.title}
                                 </a>
@@ -31,7 +30,6 @@ class Navbar extends React.Component {
                         )
                     } )}
                 </ul>
-                <Button>Sign Up</Button>
             </nav>
         )
     }

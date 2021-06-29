@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 
 const App = () => (
     <>
-        <Header />
         <Navbar />
         <WeekTable />
     </>
