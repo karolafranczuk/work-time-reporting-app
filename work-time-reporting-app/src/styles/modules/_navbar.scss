@@ -134,3 +134,33 @@
         transition: 250ms;
     }
 }
+
+.nav-log-pane {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 20px;
+    list-style: none;
+    text-align: center;
+    width: 25vw;
+    justify-content: end;
+    margin-right: 2rem;
+
+    &__h3{
+        border: 1px solid #6668f4;
+        background-color: #6668f4;
+        border-radius: 4px 0px 0px 4px;
+        margin-right: -2rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        color: white;
+
+    }
+    &__a{
+        border: 1px solid #6668f4;
+        background-color: #6668f4;
+        border-radius: 0px 4px 4px 0px;
+        padding: 1rem;
+        color: white;
+
+    }
+}

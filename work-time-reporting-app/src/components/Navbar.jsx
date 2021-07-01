@@ -30,6 +30,11 @@ class Navbar extends React.Component {
                         )
                     } )}
                 </ul>
+                <div className="nav-log-pane">
+                    <h3 className="nav-log-pane__h3">Logged in as Name</h3>
+                    <a href="#" className="nav-log-pane__a">Log out</a>
+                </div>
+                
             </nav>
         )
     }

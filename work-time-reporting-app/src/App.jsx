@@ -1,17 +1,29 @@
 import React from 'react';
 
-import Header from './components/Header';
-import WeekTable from './components/WeekTable';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Content from './components/Content';
 
-const App = () => (
-    <>
+class App extends React.Component {
+
+    getUserEmail() {
+        return "karo.franczuk@gmail.com"
+    }
+
+    handleLogout() {
+        console.log("handle logout")
+    }
+
+    render() {
+        return (
+        <>
         <Navbar />
         <Content />
         <Footer />
-    </>
-)
+    </>  
+         )
+    }
+}
+
 
 export default App;
