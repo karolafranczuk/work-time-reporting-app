@@ -30,41 +30,102 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow:outset 0 2.6em 4em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
-    height: 60vh;
+    
     width: 60vh;
     padding: 16px;
+
+    &2 {
+        border: 8px solid rgb(114, 104, 201);
+        border-radius: 8px;
+        height: 60vh;
+    }
 
     &__header {
         text-align: center;
         font-size: 2.6rem;
-        padding: 2px;
+        padding-top: 15px;
         padding-bottom: 40px;
+        color: rgb(79, 74, 124);
     }
 
     &__container {
-        padding: 10px;
+        padding: 10px 50px 10px 50px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
 
-        &__label__email {
-            border: 1px solid black;
-            border-radius: 4px;
-           
-
+        &__label__form {
             font-size: 1.8rem;
             font-weight: bolder;
-            color: rgb(17, 17, 17);
+            color: rgb(79, 74, 124);
         }
 
-        &__input__email {
-            border: 1px solid black;
+        &__input__form {
+            border: 2px solid rgba(154, 148, 199, 0.918);
             border-radius: 4px;
             width: 75%;
             padding: 2px;
             padding-left: 7px;
             font-size: 1.6rem;
+            background-color: rgba(214, 211, 241, 0.959);
+            color: rgb(67, 58, 78);
+
+            &::placeholder {
+                color: rgb(67, 58, 78);
+            }
+        }
+        &__submit-button {
+            width: 100%;
+            font-size: 1.8rem;
+            font-weight: bolder;
+            padding: 6px;
+            border-radius: 8px;
+            border: 2px solid rgba(81, 61, 107, 0.911);
+            background-color: rgba(81, 61, 107, 0.911);
+            color:rgba(243, 231, 247, 0.986);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            &_disabled{
+                opacity: 0.6;
+                cursor: not-allowed
+            }
+        }
+
+        &__submit-button:hover{  
+            color: rgba(81, 61, 107, 0.911);
+            background-color: rgba(243, 231, 247, 0.986);
+        }
+
+        &__OR{
+            margin: 20px;
+            margin-right: 60px;
+            margin-left: 60px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        &__submit__recruiter{
+            width: 100%;
+            font-size: 1.8rem;
+            font-weight: bolder;
+            padding: 60px 6px 60px 6px;
+            border-radius: 8px;
+            border: 2px solid rgba(81, 61, 107, 0.911);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: rgba(81, 61, 107, 0.911);
+            color:rgba(243, 231, 247, 0.986);
+        }
+
+        &__submit__recruiter:hover {
+            color: rgba(81, 61, 107, 0.911);
+            background-color: rgba(243, 231, 247, 0.986);
         }
     }
 
