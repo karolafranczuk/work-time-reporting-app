@@ -4,10 +4,16 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Content from './components/Content';
 import LoginPage from './components/LoginPage';
+import AuthenticationAPI from './api/FetchAuthenticationApi';
 
 class App extends React.Component {
     state = {
-       isUserLoggedIn: false 
+        accessToken: null,
+        previousLoginAttemptFailed: false
+    }
+
+    isUserLoggedIn() {
+        return !this.state.accessToken;
     }
 
     getUserEmail() {
@@ -16,6 +22,16 @@ class App extends React.Component {
 
     handleLogout() {
         console.log("handle logout")
+    }
+
+    handleLoginAttempt = (credentials) => {
+        AuthenticationAPI.login(credentials)
+            .then( ({accessToken}) => {
+                this.setState({
+                    accessToken,
+
+                })
+            })    
     }
 
     render() {
@@ -27,7 +43,8 @@ class App extends React.Component {
             <Content />
             <Footer />
         </> : 
-        <LoginPage />
+        <LoginPage
+            onLoginAttempt={this.handleLoginAttempt} />
     }
          
     </> 
